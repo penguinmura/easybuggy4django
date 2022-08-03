@@ -35,10 +35,10 @@ jobs:
         pip install -r requirements.txt
     - name: Run Server
       run: |
-        python manage.py runserver
+        python manage.py runserver &
     - name: Zap Full Scan
       uses: zaproxy/action-full-scan@v0.4.0
       with:
         docker_name: 'owasp/zap2docker-stable'
-        target: 'http://localhost:8000/'
+        target: 'http://127.0.0.1:8000/'
         cmd_options: '-a'
