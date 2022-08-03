@@ -70,3 +70,10 @@ jobs:
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v2
+
+    - name: Zap Full Scan
+      uses: zaproxy/action-full-scan@v0.2.0
+      with:
+        docker_name: 'owasp/zap2docker-stable'
+        target: 'http://localhost:50080/'
+        cmd_options: '-d'
