@@ -384,7 +384,6 @@ def integer_overflow(request):
         'title': _('title.intoverflow.page'),
         'note': _('msg.note.intoverflow'),
     }
-<<<<<<< HEAD
     # if request.method == 'POST':
     #     str_times = request.POST.get("times")
 
@@ -407,30 +406,6 @@ def integer_overflow(request):
     #                 if times == 42:
     #                     description += " : " + _('msg.answer.is.correct')
     #                 d['description'] = description
-=======
-    if request.method == 'POST':
-        str_times = request.POST.get("times")
-
-        if str_times is not None and str_times is not '' and str_times.isdigit():
-            times = int(str_times)
-            if times >= 0:
-                # TODO Change a better way
-                thickness = int(np.array([2 ** times, ], dtype=int)) / 10  # mm
-                thickness_m = int(thickness) / 1000  # m
-                thickness_km = int(thickness_m) / 1000  # km
-
-                if times >= 0:
-                    d['times'] = str_times
-                    description = str(thickness) + " mm"
-                    if thickness_m is not None and thickness_km is not None:
-                        if 1 <= thickness_m and thickness_km < 1:
-                            description += " = " + str(thickness_m) + " m"
-                        if 1 <= thickness_km:
-                            description += " = " + str(thickness_km) + " km"
-                    if times == 42:
-                        description += " : " + _('msg.answer.is.correct')
-                    d['description'] = description
->>>>>>> ba1ecd48515da718ea32af7bd2eedb3c644580c5
 
     return render(request, 'intoverflow.html', d)
 
