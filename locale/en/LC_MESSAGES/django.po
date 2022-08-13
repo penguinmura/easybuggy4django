@@ -132,11 +132,6 @@ msgstr "Mojibake occurs if you enter a multi-byte string."
 msgid "title.intoverflow.page"
 msgstr "The Distance from Earth to the Moon"
 
-#: easybuggy/views.py:385
-msgid "msg.note.intoverflow"
-msgstr ""
-"Integer overflow occurs if you enter a number greater than or equal to 63."
-
 #: easybuggy/views.py:407
 msgid "msg.answer.is.correct"
 msgstr "Your answer is correct!"
@@ -593,14 +588,6 @@ msgstr "Mojibake"
 #: templates/index.html:63
 msgid "function.description.mojibake"
 msgstr "Mojibake can occur."
-
-#: templates/index.html:66
-msgid "function.name.int.overflow"
-msgstr "Integer overflow"
-
-#: templates/index.html:67
-msgid "function.description.int.overflow"
-msgstr "Integer overflow can occur."
 
 #: templates/index.html:70
 msgid "function.name.round.off.error"
