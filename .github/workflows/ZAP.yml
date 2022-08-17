@@ -37,7 +37,7 @@ jobs:
       run: |
         python manage.py runserver &
     - name: Check open port
-      run: ping 'http://127.0.0.1:8000'
+      run: curl 'http://127.0.0.1:8000'
     - name: Zap Full Scan
       uses: zaproxy/action-full-scan@v0.4.0
       with:
