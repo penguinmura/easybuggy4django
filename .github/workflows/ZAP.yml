@@ -36,9 +36,11 @@ jobs:
     - name: Run Server
       run: |
         python manage.py runserver &
+    - name: Check open port
+      run: ping 'http://127.0.0.1:8000'
     - name: Zap Full Scan
       uses: zaproxy/action-full-scan@v0.4.0
       with:
         docker_name: 'owasp/zap2docker-stable'
         target: 'http://127.0.0.1:8000/'
-        cmd_options: '-'
+        cmd_options: '-d'
